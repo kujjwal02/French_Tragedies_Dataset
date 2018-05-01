@@ -12373,7 +12373,7 @@ Name: word, dtype: int64</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>according to <a href="https://translate.google.co.in/#fr/en/bien">google translate</a> the word <code>bien</code> means <code>good</code></p>
 <p>the word with id <code>147</code> seems ok, but<br>
-the other one seems to be a mistake as it is relating it with <code>fear</code> and <code>sadness</code></p>
+the other one seems to be a mistake as it is relating it with <code>fear</code> and <code>surprise</code></p>
 
 </div>
 </div>
@@ -13013,12 +13013,13 @@ We will try to look for all of them</p>
 <span class="sd">    for each window of length 1 to 6 in sent</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">for</span> <span class="n">window_size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># search all the words of length window_size</span>
         <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">window</span><span class="p">(</span><span class="n">sent</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">window_size</span><span class="p">):</span>
             <span class="n">sub_str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">each</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">sentiment</span> <span class="o">=</span> <span class="n">lexicon</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sub_str</span><span class="p">]</span>
                 
-                <span class="c1"># remove that phrase so that we don&#39;t see it for smaller window</span>
+                <span class="c1"># remove that phrase so that we don&#39;t see it again for smaller window</span>
                 <span class="n">sent</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">sub_str</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
                 
                 <span class="k">yield</span> <span class="n">sentiment</span>
@@ -13475,7 +13476,7 @@ We will try to look for all of them</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The polarity of all the words are positive ranging from 172 to 1304.</p>
-<p>On looing at the text themself, the text with highest polarity_diff was positine and lowest diff was negative</p>
+<p>On looking at the text themself, the text with highest polarity_diff was positive and lowest diff was negative</p>
 <p>but it it hard to classify the sentiment bases on this without any supervised process</p>
 <p>For now lets explore more featurization</p>
 
