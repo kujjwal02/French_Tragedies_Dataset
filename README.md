@@ -11,5 +11,4 @@ estimate the sentiment in these documents<br>
 i.e calculate if individual documents are of positive or negative sentiment<br>
 additionaly classify them into further categories of sentiments
 
-[View Notebook](https://rawgit.com/kujjwal02/French_Tragedies_Dataset/master/NYC Final.html
-)
+[View Notebook](http://bit.ly/FrenchTragedy)
